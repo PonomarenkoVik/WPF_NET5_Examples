@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LibraryModel
+namespace LibraryBL
 {
     public class Class1
     {

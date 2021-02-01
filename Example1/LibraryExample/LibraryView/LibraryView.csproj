@@ -7,7 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LibraryModel\LibraryModel.csproj" />
+    <PackageReference Include="Autofac" Version="6.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CommonEntities\CommonEntities.csproj" />
+    <ProjectReference Include="..\LibraryBL\LibraryBL.csproj" />
+    <ProjectReference Include="..\LibraryDataLayer\LibraryDataLayer.csproj" />
+    <ProjectReference Include="..\LibraryViewModel\LibraryViewModel.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CommonEntities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,8 +21,11 @@ namespace LibraryView
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        private ILibraryViewModel _viewModel;
+        public MainWindow(ILibraryViewModel vm)
         {
+            _viewModel = vm;
+            DataContext = _viewModel.GetMainWindowDataContext();
             InitializeComponent();
         }
     }

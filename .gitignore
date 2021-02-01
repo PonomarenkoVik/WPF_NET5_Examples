@@ -1,5 +1,6 @@
 .vs
 .cache
+.user
 Bin
 ProTrader/Bin
 AlgoAgent/obj

@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
 
-namespace LibraryViewModel
+namespace CommonEntities
 {
-    public class AddBookWindowViewModel
+    public interface ILibraryViewModel
     {
-
+        object GetMainWindowDataContext();
     }
 }

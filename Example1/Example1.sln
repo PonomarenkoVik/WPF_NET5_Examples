@@ -3,15 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_NET5_Examples", "WPF_NET5_Examples\WPF_NET5_Examples.csproj", "{75E85F9A-4599-4C6D-BABA-494EB94A0ECE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF_NET5_Examples", "WPF_NET5_Examples\WPF_NET5_Examples.csproj", "{75E85F9A-4599-4C6D-BABA-494EB94A0ECE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LibraryExample", "LibraryExample", "{8FE3F412-23D3-496F-B305-E9111627C8D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryView", "LibraryExample\LibraryView\LibraryView.csproj", "{99A48B09-7FE1-4820-BE8A-B6A43CB3C7F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryView", "LibraryExample\LibraryView\LibraryView.csproj", "{99A48B09-7FE1-4820-BE8A-B6A43CB3C7F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryViewModel", "LibraryExample\LibraryViewModel\LibraryViewModel.csproj", "{3D9FDAD1-8B9F-43AE-BEA9-AB1475BBC442}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryViewModel", "LibraryExample\LibraryViewModel\LibraryViewModel.csproj", "{3D9FDAD1-8B9F-43AE-BEA9-AB1475BBC442}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryModel", "LibraryExample\LibraryModel\LibraryModel.csproj", "{2F00CAB8-6B36-4D52-8BC6-B7AD7D9BCA8A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryDataLayer", "LibraryExample\LibraryDataLayer\LibraryDataLayer.csproj", "{06281D64-6358-437F-A8CD-270C2DBA8A10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryBL", "LibraryExample\LibraryBL\LibraryBL.csproj", "{B21FF30A-334F-43F7-91A4-CB47EFFFD12C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonEntities", "LibraryExample\CommonEntities\CommonEntities.csproj", "{07B5B40A-8B82-4C6F-BD73-C6F6395330A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,10 +35,18 @@ Global
 		{3D9FDAD1-8B9F-43AE-BEA9-AB1475BBC442}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D9FDAD1-8B9F-43AE-BEA9-AB1475BBC442}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D9FDAD1-8B9F-43AE-BEA9-AB1475BBC442}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2F00CAB8-6B36-4D52-8BC6-B7AD7D9BCA8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2F00CAB8-6B36-4D52-8BC6-B7AD7D9BCA8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2F00CAB8-6B36-4D52-8BC6-B7AD7D9BCA8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2F00CAB8-6B36-4D52-8BC6-B7AD7D9BCA8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06281D64-6358-437F-A8CD-270C2DBA8A10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06281D64-6358-437F-A8CD-270C2DBA8A10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06281D64-6358-437F-A8CD-270C2DBA8A10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06281D64-6358-437F-A8CD-270C2DBA8A10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B21FF30A-334F-43F7-91A4-CB47EFFFD12C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B21FF30A-334F-43F7-91A4-CB47EFFFD12C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B21FF30A-334F-43F7-91A4-CB47EFFFD12C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B21FF30A-334F-43F7-91A4-CB47EFFFD12C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07B5B40A-8B82-4C6F-BD73-C6F6395330A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07B5B40A-8B82-4C6F-BD73-C6F6395330A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07B5B40A-8B82-4C6F-BD73-C6F6395330A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07B5B40A-8B82-4C6F-BD73-C6F6395330A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -42,7 +54,9 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{99A48B09-7FE1-4820-BE8A-B6A43CB3C7F6} = {8FE3F412-23D3-496F-B305-E9111627C8D3}
 		{3D9FDAD1-8B9F-43AE-BEA9-AB1475BBC442} = {8FE3F412-23D3-496F-B305-E9111627C8D3}
-		{2F00CAB8-6B36-4D52-8BC6-B7AD7D9BCA8A} = {8FE3F412-23D3-496F-B305-E9111627C8D3}
+		{06281D64-6358-437F-A8CD-270C2DBA8A10} = {8FE3F412-23D3-496F-B305-E9111627C8D3}
+		{B21FF30A-334F-43F7-91A4-CB47EFFFD12C} = {8FE3F412-23D3-496F-B305-E9111627C8D3}
+		{07B5B40A-8B82-4C6F-BD73-C6F6395330A9} = {8FE3F412-23D3-496F-B305-E9111627C8D3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9E6DEB5D-50BE-4BE7-8E3D-D81333746D2F}
