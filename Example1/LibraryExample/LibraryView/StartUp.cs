@@ -1,10 +1,10 @@
 ﻿using Autofac;
 using CommonEntities;
-using LibraryBusinessLayer;
-using LibraryDataLayer;
 using LibraryViewModel.ViewModels;
 using System;
 using System.Windows;
+using LibraryBusinessLayer;
+using LibraryDataLayer;
 
 namespace LibraryView
 {
@@ -25,6 +25,7 @@ namespace LibraryView
             ILibraryViewModel viewModel = _container.Resolve<ILibraryViewModel>();
 
             var mainWindow = new MainWindow(viewModel);
+            viewModel.SetView(mainWindow);
             // Запуск приложения и отображение главного окна,
             app.Run(mainWindow);
         }
