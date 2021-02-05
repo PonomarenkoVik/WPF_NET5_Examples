@@ -13,12 +13,14 @@ namespace LibraryViewModel.ViewModels
     {
         private ILibraryView _view;
         private ILibraryBL _bl;
-        public MainWindowViewModel(ILibraryView view, ILibraryBL bl)
-        {
-            _view = view; 
+        public MainWindowViewModel(ILibraryBL bl)
+        { 
             _bl = bl;
              AddBook = new RelayCommand(OnAddBook, CanAddBook);
         }
+
+        public void SetView(ILibraryView view) => _view = view;
+
 
         private bool CanAddBook(object arg)
         {

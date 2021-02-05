@@ -8,6 +8,6 @@ namespace CommonEntities
 {
     public interface ILibraryViewModel : IDisposable
     {
-
+        void SetView(ILibraryView view);
     }
 }
