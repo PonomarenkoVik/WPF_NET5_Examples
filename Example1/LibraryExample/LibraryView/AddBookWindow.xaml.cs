@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CommonEntities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,11 +18,14 @@ namespace LibraryView
     /// <summary>
     /// Interaction logic for AddBookWindow.xaml
     /// </summary>
-    public partial class AddBookWindow : Window
+    public partial class AddBookWindow : Window, IDialogProvider<object>
     {
-        public AddBookWindow()
+        public AddBookWindow(object param)
         {
+            DataContext = param;
             InitializeComponent();
         }
+
+        public void ShowDialog(object param) => ShowDialog();
     }
 }

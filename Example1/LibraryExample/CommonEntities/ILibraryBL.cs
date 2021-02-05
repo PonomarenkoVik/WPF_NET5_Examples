@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace CommonEntities
 {
-    public interface ILibraryBL
+    public interface ILibraryBL : IDisposable
     {
+
     }
 }

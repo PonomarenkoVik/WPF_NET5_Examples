@@ -17,4 +17,8 @@
     <ProjectReference Include="..\LibraryViewModel\LibraryViewModel.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+  </ItemGroup>
+
 </Project>

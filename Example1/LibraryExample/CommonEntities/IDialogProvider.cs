@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace CommonEntities
 {
-    public interface IDialogProvider<P, R>
+    public interface IDialogProvider<T>
     {
-        R ShowDialog(P param);
+        void ShowDialog(T param);
     }
 }

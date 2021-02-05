@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace CommonEntities
 {
-    public interface ILibraryViewModel : IDisposable
+    public interface ILibraryView
     {
-
+        IDialogProvider<object> CreateAddBookDialogProvider(object dataContext);
     }
 }

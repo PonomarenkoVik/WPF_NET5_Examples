@@ -19,14 +19,15 @@ namespace LibraryView
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window, ILibraryView
     {
         private ILibraryViewModel _viewModel;
         public MainWindow(ILibraryViewModel vm)
         {
-            _viewModel = vm;
-            DataContext = _viewModel.GetMainWindowDataContext();
+            DataContext = _viewModel = vm;
             InitializeComponent();
         }
+
+        public IDialogProvider<object> CreateAddBookDialogProvider(object dataContext) => new AddBookWindow(dataContext);
     }
 }
