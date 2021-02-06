@@ -1,4 +1,5 @@
 ﻿using CommonEntities;
+using CommonEntities.ModelViewInterfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,15 +20,23 @@ namespace LibraryView
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window, ILibraryView
+    public partial class MainWindow : Window, ILibraryMainWindowView
     {
-        private ILibraryViewModel _viewModel;
-        public MainWindow(ILibraryViewModel vm)
+        private ILibraryMainWindowViewModel _viewModel;
+        public MainWindow(ILibraryMainWindowViewModel vm)
         {
             DataContext = _viewModel = vm;
             InitializeComponent();
         }
 
-        public IDialogProvider<object> CreateAddBookDialogProvider(object dataContext) => new AddBookWindow(dataContext);
+        public IDialogProvider<object> CreateAddBookDialogProvider(ILibraryAddBookWindowModelView dataContext)
+        {
+           return new AddBookWindow(dataContext) 
+           { 
+               Owner = this,
+               WindowStartupLocation = WindowStartupLocation.CenterOwner
+
+           };
+        }
     }
 }

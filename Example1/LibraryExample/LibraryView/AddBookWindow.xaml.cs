@@ -1,4 +1,5 @@
 ﻿using CommonEntities;
+using CommonEntities.ModelViewInterfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,12 +21,14 @@ namespace LibraryView
     /// </summary>
     public partial class AddBookWindow : Window, IDialogProvider<object>
     {
-        public AddBookWindow(object param)
+        public AddBookWindow(ILibraryAddBookWindowModelView viewModel)
         {
-            DataContext = param;
+            this.DataContext = viewModel;
             InitializeComponent();
         }
 
+        public void Show(object param) => Show();
+       
         public void ShowDialog(object param) => ShowDialog();
     }
 }

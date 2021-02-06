@@ -22,7 +22,7 @@ namespace LibraryView
             Application app = new Application();
             // Создание главного окна.
             _container = builder.Build();
-            ILibraryViewModel viewModel = _container.Resolve<ILibraryViewModel>();
+            ILibraryMainWindowViewModel viewModel = _container.Resolve<ILibraryMainWindowViewModel>();
 
             var mainWindow = new MainWindow(viewModel);
             viewModel.SetView(mainWindow);
@@ -34,8 +34,8 @@ namespace LibraryView
         {
             builder.RegisterType<LibraryData>().As<ILibraryData>();
             builder.RegisterType<LibraryBL>().As<ILibraryBL>();
-            builder.RegisterType<MainWindowViewModel>().As<ILibraryViewModel>();
-            builder.RegisterType<MainWindow>().As<ILibraryView>();
+            builder.RegisterType<MainWindowViewModel>().As<ILibraryMainWindowViewModel>();
+            builder.RegisterType<MainWindow>().As<ILibraryMainWindowView>();
 
         }
     }

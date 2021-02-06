@@ -9,9 +9,9 @@ using System.Windows.Input;
 
 namespace LibraryViewModel.ViewModels
 {
-    public class MainWindowViewModel : ViewModelBase, ILibraryViewModel, IDisposable
+    public class MainWindowViewModel : ViewModelBase, ILibraryMainWindowViewModel, IDisposable
     {
-        private ILibraryView _view;
+        private ILibraryMainWindowView _view;
         private ILibraryBL _bl;
         public MainWindowViewModel(ILibraryBL bl)
         { 
@@ -19,12 +19,12 @@ namespace LibraryViewModel.ViewModels
              AddBook = new RelayCommand(OnAddBook, CanAddBook);
         }
 
-        public void SetView(ILibraryView view) => _view = view;
+        public void SetView(ILibraryMainWindowView view) => _view = view;
 
 
         private bool CanAddBook(object arg)
         {
-            throw new NotImplementedException();
+            return true;
         }
 
         private void OnAddBook(object obj)
@@ -34,7 +34,7 @@ namespace LibraryViewModel.ViewModels
         }
 
        
-        public ICommand AddBook { get; }
+        public ICommand AddBook { get; set; }
 
 
         bool _disposed = false;

@@ -20,7 +20,7 @@
 
         <Menu Grid.Column="0" Grid.Row="0">
             <MenuItem Header="Main">
-                <!--<MenuItem Header="Add book" Command="AddBook"></MenuItem>-->
+                <MenuItem Header="Add book" Command="{Binding AddBook}"></MenuItem>
             </MenuItem>
         </Menu>
     </Grid>

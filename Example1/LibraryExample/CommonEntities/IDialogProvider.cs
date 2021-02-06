@@ -9,5 +9,6 @@ namespace CommonEntities
     public interface IDialogProvider<T>
     {
         void ShowDialog(T param);
+        void Show(T param);
     }
 }

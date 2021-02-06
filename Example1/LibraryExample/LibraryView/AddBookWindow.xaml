@@ -3,13 +3,15 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:LibraryView"
         mc:Ignorable="d"
-        Title="AddBookWindow" Height="450" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" DataContext="AddBookWindowViewModel">
-    <Grid Margin="5">
+        Title="Add book window" Height="300" Width="500" ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
+    <Grid Margin="10 0 10 5">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="1.35*"></ColumnDefinition>
+            <ColumnDefinition Width="0.2*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="1.35*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="35"></RowDefinition>
@@ -21,6 +23,31 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
 
-        <TextBlock></TextBlock>
+        <TextBlock Grid.Row="0" Text="Add book" Grid.Column="0" Grid.ColumnSpan="5" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24"></TextBlock>
+        
+        <TextBlock Grid.Row="1" Text="Book name" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16"></TextBlock>
+        <TextBlock Grid.Row="2" Text="Book id" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16"></TextBlock>
+        <TextBlock Grid.Row="3" Text="ICBN №" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16"></TextBlock>
+        <TextBlock Grid.Row="4" Text="Author" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16"></TextBlock>
+        <TextBlock Grid.Row="5" Text="Publisher" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16"></TextBlock>
+
+        <TextBox Text="{Binding BookName, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="16"></TextBox>
+        <TextBox Text="{Binding BookId, UpdateSourceTrigger=PropertyChanged}" Grid.Row="2" Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="16"></TextBox>
+        <TextBox Text="{Binding ICBN, UpdateSourceTrigger=PropertyChanged}" Grid.Row="3" Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="16"></TextBox>
+        <TextBox Text="{Binding Author, UpdateSourceTrigger=PropertyChanged}" Grid.Row="4" Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="16"></TextBox>
+        <TextBox Text="{Binding Publisher, UpdateSourceTrigger=PropertyChanged}" Grid.Row="5" Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="16"></TextBox>
+
+        <TextBlock Grid.Row="1" Text="Edition" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16"></TextBlock>
+        <TextBlock Grid.Row="2" Text="Book shelf" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16"></TextBlock>
+        <TextBlock Grid.Row="3" Text="Row №" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16"></TextBlock>
+        <TextBlock Grid.Row="4" Text="Column №" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16"></TextBlock>
+
+        <TextBox Text="{Binding Edition, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" Grid.Column="4"  VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="16"></TextBox>
+        <TextBox Text="{Binding BookShelf, UpdateSourceTrigger=PropertyChanged}" Grid.Row="2" Grid.Column="4"  VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="16"></TextBox>
+        <TextBox Text="{Binding Row, UpdateSourceTrigger=PropertyChanged}" Grid.Row="3" Grid.Column="4"  VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="16"></TextBox>
+        <TextBox Text="{Binding Column, UpdateSourceTrigger=PropertyChanged}" Grid.Row="4" Grid.Column="4"  VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="16"></TextBox>
+
+        <Button Grid.Row="6" ToolTip="{Binding AddButtonTooltip}" ToolTipService.Placement="Right" ToolTipService.HorizontalOffset="-10" ToolTipService.VerticalOffset="-30"  ToolTipService.ShowOnDisabled="True" Content="Add" Command="{Binding Add, UpdateSourceTrigger=PropertyChanged}" Width="100" Grid.Column="0" Grid.ColumnSpan="5" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"></Button> 
+
     </Grid>
 </Window>
