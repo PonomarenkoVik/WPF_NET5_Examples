@@ -18,5 +18,11 @@ namespace LibraryBusinessLayer
         {
             throw new NotImplementedException();
         }
+
+        public bool TryAddBook(Book book, out string mess)
+        {
+            mess = null;
+            return /*_dataLayer.TryAddBook(book, out mess)*/ true;
+        }
     }
 }

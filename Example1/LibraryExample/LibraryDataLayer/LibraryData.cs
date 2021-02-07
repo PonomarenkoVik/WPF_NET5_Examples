@@ -13,5 +13,10 @@ namespace LibraryDataLayer
         {
             throw new NotImplementedException();
         }
+
+        public bool TryAddBook(Book book, out string mess)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -29,7 +29,7 @@ namespace LibraryView
             InitializeComponent();
         }
 
-        public IDialogProvider<object> CreateAddBookDialogProvider(ILibraryAddBookWindowModelView dataContext)
+        public IDialogResultProvider<object, Result<bool, string>> CreateAddBookDialogProvider(ILibraryAddBookWindowModelView dataContext)
         {
            return new AddBookWindow(dataContext) 
            { 

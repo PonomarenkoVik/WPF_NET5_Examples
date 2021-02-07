@@ -5,7 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Title="Add book window" Height="300" Width="500" ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
-    <Grid Margin="10 0 10 5">
+
+    <Window.Resources>
+        <ResourceDictionary Source="Resources/LibraryResources.xaml"></ResourceDictionary>
+    </Window.Resources>
+    <Window.Style>
+        <Style TargetType="{x:Type Window}" BasedOn="{StaticResource BaseWindowStyle}"/>
+    </Window.Style>
+
+        <Grid Margin="10 0 10 5">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="1.35*"></ColumnDefinition>
@@ -24,7 +32,7 @@
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="0" Text="Add book" Grid.Column="0" Grid.ColumnSpan="5" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24"></TextBlock>
-        
+
         <TextBlock Grid.Row="1" Text="Book name" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16"></TextBlock>
         <TextBlock Grid.Row="2" Text="Book id" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16"></TextBlock>
         <TextBlock Grid.Row="3" Text="ICBN №" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16"></TextBlock>
@@ -37,7 +45,7 @@
         <TextBox Text="{Binding Author, UpdateSourceTrigger=PropertyChanged}" Grid.Row="4" Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="16"></TextBox>
         <TextBox Text="{Binding Publisher, UpdateSourceTrigger=PropertyChanged}" Grid.Row="5" Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="16"></TextBox>
 
-        <TextBlock Grid.Row="1" Text="Edition" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16"></TextBlock>
+        <TextBlock  Grid.Row="1" Text="Edition" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16"></TextBlock>
         <TextBlock Grid.Row="2" Text="Book shelf" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16"></TextBlock>
         <TextBlock Grid.Row="3" Text="Row №" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16"></TextBlock>
         <TextBlock Grid.Row="4" Text="Column №" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16"></TextBlock>
@@ -47,7 +55,7 @@
         <TextBox Text="{Binding Row, UpdateSourceTrigger=PropertyChanged}" Grid.Row="3" Grid.Column="4"  VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="16"></TextBox>
         <TextBox Text="{Binding Column, UpdateSourceTrigger=PropertyChanged}" Grid.Row="4" Grid.Column="4"  VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="16"></TextBox>
 
-        <Button Grid.Row="6" ToolTip="{Binding AddButtonTooltip}" ToolTipService.Placement="Right" ToolTipService.HorizontalOffset="-10" ToolTipService.VerticalOffset="-30"  ToolTipService.ShowOnDisabled="True" Content="Add" Command="{Binding Add, UpdateSourceTrigger=PropertyChanged}" Width="100" Grid.Column="0" Grid.ColumnSpan="5" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"></Button> 
+        <Button Grid.Row="6" ToolTip="{Binding AddButtonTooltip}" Style="{StaticResource BaseButtonStyle}" ToolTipService.Placement="Right" ToolTipService.HorizontalOffset="-10" ToolTipService.VerticalOffset="-30"  ToolTipService.ShowOnDisabled="True" Content="Add" Command="{Binding Add, UpdateSourceTrigger=PropertyChanged}" Width="100" Grid.Column="0" Grid.ColumnSpan="5" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"></Button> 
 
     </Grid>
 </Window>

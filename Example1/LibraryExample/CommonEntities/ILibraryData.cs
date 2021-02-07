@@ -8,5 +8,6 @@ namespace CommonEntities
 {
     public interface ILibraryData : IDisposable
     {
+        bool TryAddBook(Book book, out string mess);
     }
 }

@@ -9,6 +9,6 @@ namespace CommonEntities
 {
     public interface ILibraryMainWindowView
     {
-        IDialogProvider<object> CreateAddBookDialogProvider(ILibraryAddBookWindowModelView dataContext);
+        IDialogResultProvider<object, Result<bool, string>> CreateAddBookDialogProvider(ILibraryAddBookWindowModelView dataContext);
     }
 }

@@ -19,16 +19,20 @@ namespace LibraryView
     /// <summary>
     /// Interaction logic for AddBookWindow.xaml
     /// </summary>
-    public partial class AddBookWindow : Window, IDialogProvider<object>
+    public partial class AddBookWindow : Window, IDialogResultProvider<object, Result<bool, string>>
     {
+        ILibraryAddBookWindowModelView _viewModel;
         public AddBookWindow(ILibraryAddBookWindowModelView viewModel)
         {
-            this.DataContext = viewModel;
+            this.DataContext = _viewModel = viewModel;
             InitializeComponent();
         }
 
-        public void Show(object param) => Show();
-       
-        public void ShowDialog(object param) => ShowDialog();
+
+        public Result<bool, string> ShowDialog(object param)
+        {
+            var res = ShowDialog();
+            return new Result<bool, string>(res.HasValue ? res.Value : false, _viewModel.ErrorMessage);
+        }
     }
 }

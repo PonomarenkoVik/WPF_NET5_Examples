@@ -20,5 +20,6 @@ namespace CommonEntities.ModelViewInterfaces
         string Column { get; set; }
         string AddButtonTooltip { get; set; }
         ICommand Add { get; set; }
+        string ErrorMessage { get; }
     }
 }

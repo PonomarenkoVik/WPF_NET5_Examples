@@ -1,12 +1,6 @@
 ﻿using CommonEntities;
 using CommonEntities.ModelViewInterfaces;
 using LibraryViewModel.Commands;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Input;
 
 namespace LibraryViewModel.ViewModels
@@ -135,6 +129,8 @@ namespace LibraryViewModel.ViewModels
         #region ICommand
         public ICommand Add { get; set; }
 
+        public string ErrorMessage { get; private set; }
+
         private bool CanAddBook(object arg)
         {
             if (string.IsNullOrEmpty(BookName) ||
@@ -175,7 +171,7 @@ namespace LibraryViewModel.ViewModels
                 return false;
             }
 
-            if (!int.TryParse(ICBN, out var icbn) || icbn < 0 || bookId > 19999)
+            if (!int.TryParse(ICBN, out var icbn) || icbn < 0 || icbn > 19999)
             {
                 AddButtonTooltip = "ICBM number is not valid";
                 return false;
@@ -193,25 +189,25 @@ namespace LibraryViewModel.ViewModels
                 return false;
             }
 
-            if (!CheckFieldLength(Edition, "Edition", 5, 20, out mess))
+            if (!byte.TryParse(Edition, out var edition) || edition < 0 || edition > 30)
             {
-                AddButtonTooltip = mess;
+                AddButtonTooltip = "Edition is not valid"; ;
                 return false;
             }
 
-            if (!int.TryParse(BookShelf, out var bookShelf) || bookShelf < 0 || bookShelf > 20)
+            if (!byte.TryParse(BookShelf, out var bookShelf) || bookShelf < 0 || bookShelf > 20)
             {
                 AddButtonTooltip = "Book shelf is not valid";
                 return false;
             }
 
-            if (!int.TryParse(Row, out var row) || row < 1 || row > 40)
+            if (!byte.TryParse(Row, out var row) || row < 1 || row > 40)
             {
                 AddButtonTooltip = "Book row is not valid";
                 return false;
             }
 
-            if (!int.TryParse(Column, out var column) || column < 1 || column > 25)
+            if (!byte.TryParse(Column, out var column) || column < 1 || column > 25)
             {
                 AddButtonTooltip = "Book column is not valid";
                 return false;
@@ -239,7 +235,24 @@ namespace LibraryViewModel.ViewModels
 
         private void AddBook(object obj)
         {
-            throw new NotImplementedException();
+            Book book = Book.CreateBuilder().
+                SetBookName(BookName).
+                SetBookId(int.Parse(BookId)).
+                SetICBN(int.Parse(ICBN)).
+                SetAuthor(Author).
+                SetPublisher(Publisher).
+                SetEdition(byte.Parse(Edition)).
+                SetBookShelf(byte.Parse(BookShelf)).
+                SetRow(byte.Parse(Row)).
+                SetColumn(byte.Parse(Column)).
+                Build();
+
+            if (!_bl.TryAddBook(book, out string mess))
+            {
+                //ErrorMessage
+            }
+
+            //this.Close(); ??
         }
         #endregion
     }

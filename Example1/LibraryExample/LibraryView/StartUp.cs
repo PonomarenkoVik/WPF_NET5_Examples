@@ -23,7 +23,7 @@ namespace LibraryView
             // Создание главного окна.
             _container = builder.Build();
             ILibraryMainWindowViewModel viewModel = _container.Resolve<ILibraryMainWindowViewModel>();
-
+    
             var mainWindow = new MainWindow(viewModel);
             viewModel.SetView(mainWindow);
             // Запуск приложения и отображение главного окна,

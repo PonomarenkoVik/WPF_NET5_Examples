@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace CommonEntities
 {
-    public class IBook
+    public interface IDialogResultProvider<T, R>
     {
+        R ShowDialog(T param);
     }
 }
