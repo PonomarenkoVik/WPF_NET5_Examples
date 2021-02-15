@@ -20,7 +20,7 @@ namespace LibraryView
     /// <summary>
     /// Interaction logic for LibraryMessageBox.xaml
     /// </summary>
-    public partial class LibraryMessageBox : Window, INotifyPropertyChanged, IDialogProvider<(string title, string message)>
+    public partial class LibraryMessageBox : Window, INotifyPropertyChanged
     {
         public LibraryMessageBox()
         {

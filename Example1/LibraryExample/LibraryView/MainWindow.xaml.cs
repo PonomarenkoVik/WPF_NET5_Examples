@@ -20,23 +20,22 @@ namespace LibraryView
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window, ILibraryMainWindowView
+    public partial class MainWindow : Window//, ILibraryMainWindowView
     {
-        private ILibraryMainWindowViewModel _viewModel;
         public MainWindow(ILibraryMainWindowViewModel vm)
         {
-            DataContext = _viewModel = vm;
+            DataContext = vm;
             InitializeComponent();
         }
 
-        public IDialogResultProvider<object, Result<bool, string>> CreateAddBookDialogProvider(ILibraryAddBookWindowModelView dataContext)
-        {
-           return new AddBookWindow(dataContext) 
-           { 
-               Owner = this,
-               WindowStartupLocation = WindowStartupLocation.CenterOwner
+        //public IDialogResultProvider<object, Result<bool, string>> CreateAddBookDialogProvider(ILibraryAddBookWindowModelView dataContext)
+        //{
+        //   return new AddBookWindow(dataContext) 
+        //   { 
+        //       Owner = this,
+        //       WindowStartupLocation = WindowStartupLocation.CenterOwner
 
-           };
-        }
+        //   };
+        //}
     }
 }

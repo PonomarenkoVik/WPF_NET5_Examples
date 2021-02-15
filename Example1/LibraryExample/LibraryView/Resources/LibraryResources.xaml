@@ -5,10 +5,10 @@
     <Style x:Key="BaseControlStyle" TargetType="Control">
         <Setter Property="Background" Value="#2A3C53"></Setter>
         <Setter Property="Foreground" Value="#C8C8C8"></Setter>
+        
     </Style>
 
     <Style x:Key="BaseWindowStyle" TargetType="Window" BasedOn="{StaticResource BaseControlStyle}">
-        <Setter Property=""
         <Style.Triggers>
             <Trigger Property="IsFocused" Value="True">
                 <Setter Property="BorderBrush" Value="#70a7e6"></Setter>
@@ -44,8 +44,9 @@
         <Setter Property="Foreground" Value="White"></Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="true">
-                <Setter Property="Background" Value="#2858a6"></Setter>
+                <Setter Property="Background" Value="Black"></Setter>
                 <Setter Property="BorderBrush" Value="#4d5b78"></Setter>
+                <Setter Property="Foreground" Value="Black"></Setter>
             </Trigger>
             <Trigger Property="IsEnabled" Value="False">
                 <Setter Property="Background" Value="#456a92"></Setter>

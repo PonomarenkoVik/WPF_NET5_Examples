@@ -5,6 +5,7 @@ using System;
 using System.Windows;
 using LibraryBusinessLayer;
 using LibraryDataLayer;
+using LibraryViewModel;
 
 namespace LibraryView
 {
@@ -22,12 +23,8 @@ namespace LibraryView
             Application app = new Application();
             // Создание главного окна.
             _container = builder.Build();
-            ILibraryMainWindowViewModel viewModel = _container.Resolve<ILibraryMainWindowViewModel>();
-    
-            var mainWindow = new MainWindow(viewModel);
-            viewModel.SetView(mainWindow);
-            // Запуск приложения и отображение главного окна,
-            app.Run(mainWindow);
+            // Запуск приложения и отображение главного окна
+            app.Run(_container.Resolve<MainWindow>());
         }
 
         private static void RegisterTypes(ContainerBuilder builder)
@@ -35,8 +32,8 @@ namespace LibraryView
             builder.RegisterType<LibraryData>().As<ILibraryData>();
             builder.RegisterType<LibraryBL>().As<ILibraryBL>();
             builder.RegisterType<MainWindowViewModel>().As<ILibraryMainWindowViewModel>();
-            builder.RegisterType<MainWindow>().As<ILibraryMainWindowView>();
-
+            builder.RegisterType<MainWindow>().AsSelf().SingleInstance();
+            builder.RegisterType<WpfDialogProvider>().As<IDialogProvider>();
         }
     }
 }

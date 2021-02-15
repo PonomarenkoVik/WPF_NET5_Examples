@@ -9,7 +9,6 @@ namespace CommonEntities
 {
     public interface ILibraryMainWindowViewModel : IDisposable
     {
-        void SetView(ILibraryMainWindowView view);
         ICommand AddBook { get; set; }
     }
 }

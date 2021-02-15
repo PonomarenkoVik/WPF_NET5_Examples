@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace CommonEntities
 {
-    public interface ILibraryMainWindowView
-    {
-        IDialogResultProvider<object, Result<bool, string>> CreateAddBookDialogProvider(ILibraryAddBookWindowModelView dataContext);
-    }
+    //public interface ILibraryMainWindowView
+    //{
+    //    IDialogResultProvider<object, Result<bool, string>> CreateAddBookDialogProvider(ILibraryAddBookWindowModelView dataContext);
+    //}
 }

@@ -11,16 +11,14 @@ namespace LibraryViewModel.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase, ILibraryMainWindowViewModel, IDisposable
     {
-        private ILibraryMainWindowView _view;
+        private readonly IDialogProvider _dialogProvider;
         private ILibraryBL _bl;
-        public MainWindowViewModel(ILibraryBL bl)
+        public MainWindowViewModel(ILibraryBL bl, IDialogProvider dialogProvider)
         { 
             _bl = bl;
+            _dialogProvider = dialogProvider;
              AddBook = new RelayCommand(OnAddBook, CanAddBook);
         }
-
-        public void SetView(ILibraryMainWindowView view) => _view = view;
-
 
         private bool CanAddBook(object arg)
         {
@@ -30,10 +28,9 @@ namespace LibraryViewModel.ViewModels
         private void OnAddBook(object obj)
         {
             var vm = new AddBookWindowViewModel(_bl);
-            _view.CreateAddBookDialogProvider(vm).ShowDialog(null);
+            _dialogProvider.ShowAddBookDialog(vm);
         }
 
-       
         public ICommand AddBook { get; set; }
 
 
